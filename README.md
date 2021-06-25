@@ -6,5 +6,5 @@
  
  ## To do:
 - make command available to another inverters compatible with jblance / mpp-solar
- --make it easy to be ported to someonelses inverter setup
-  ---maybe making the connection parameters of command be in another file?
+ -- make it easy to be ported to someonelses inverter setup
+  --- maybe making the connection parameters of command be in another file?
