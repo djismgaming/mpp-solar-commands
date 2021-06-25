@@ -1,15 +1,7 @@
 #!/bin/bash
-echo "Adding ~/server/bins to PATH"
+echo "Adding /bins to PATH"
 sleep 3
-echo "export PATH="\$HOME/server/bins:\$PATH"" >> ~/.bashrc
-echo "installing bash_aliases and nanorc"
-ln -s -i .bash_aliases >> ~/.bash_aliases
-ln -s -i .nanorc ~/.nanorc
-sleep 3
-echo "Links of .env and docker-compose.yml to \$HOME"
-ln -s -i .env ~/.env
-ln -s -i docker-compose.yml ~/docker-compose.yml
-sleep 3
+echo "export PATH="\$HOME/mpp-solar-commands/bins:\$PATH"" >> ~/.bashrc
 echo "..."
 sleep 3
 echo "Please use command source ~/.bashrc to apply PATH changes immediately"
