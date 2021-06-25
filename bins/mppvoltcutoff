@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "PSDV<nn.n>: Setting battery cut-off voltage (Battery under voltage)"
+echo "nn.n: 40.0V ~ 48.0V"
+
+read -p Selection: value
+
+function command () {
+    mpp-solar -p /dev/hidraw0 -P PI41 -c PSDV$value;
+    }
+command $value
