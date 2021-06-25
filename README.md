@@ -5,6 +5,8 @@
  This is hosted on a Dell Inspiron 1545 connected to the inverter via USB. Working flawlessly so far!
  
  ## To do:
+- fix the setup script to just add the bins directory to the user's PATH
+ 
 - make command available to another inverters compatible with jblance/mpp-solar
   - make it easy to be ported to someone's inverter setup
     - maybe making the connection parameters of command be in another file on execution?
