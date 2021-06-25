@@ -13,3 +13,5 @@ sleep 3
 echo "..."
 sleep 3
 echo "Please use command source ~/.bashrc to apply PATH changes immediately"
+echo "Below for copy > paste"
+echo "source ~/.bashrc"
