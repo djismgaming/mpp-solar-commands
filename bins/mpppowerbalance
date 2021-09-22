@@ -2,8 +2,9 @@
 echo "PSPB<n ><cr>: Setting Solar power balance"
 echo "0: DISABLED - PV input max current will be the max charged current"
 echo "1: ENABLED - PV input max power will be the sum of the max charged power and loads power"
+echo
 
-read -p Selection: value
+read -n 2 -p "Selection:" value
 
 function command () {
     mpp-solar -p /dev/hidraw0 -P PI41 -c PSPB$value;

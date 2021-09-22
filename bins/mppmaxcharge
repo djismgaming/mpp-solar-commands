@@ -2,8 +2,9 @@
 echo "MNCHGC<nnn>: Setting max charging current"
 echo "nnn is max charging current"
 echo "...060,070,080,090..."
+echo
 
-read -p Selection: value
+read -n 2 -p "Selection:" value
 
 function command () {
     mpp-solar -p /dev/hidraw0 -P PI41 -c MNCHGC0$value;

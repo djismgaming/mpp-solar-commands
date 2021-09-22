@@ -4,8 +4,9 @@ echo "00 - utility first"
 echo "01 - solar first"
 echo "02 - solar and utility"
 echo "03 - only solar"
+echo
 
-read -p Selection: value
+read -n 2 -p "Selection:" value
 
 function command () {
     mpp-solar -p /dev/hidraw0 -P PI41 -c PCP$value;

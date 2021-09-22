@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "PCVV<nn.n>: Setting battery C.V. (constant voltage) charging voltage"
 echo "nn.n: 48.0V ~ 58.4V"
+echo
 
-read -p Selection: value
+read -n 2 -p "Selection:" value
 
 function command () {
     mpp-solar -p /dev/hidraw0 -P PI41 -c PCVV$value;

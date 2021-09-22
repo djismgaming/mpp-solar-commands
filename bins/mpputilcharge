@@ -2,8 +2,9 @@
 echo "MUCHGC<nnn>: Setting utility max charging current"
 echo "nnn is max charging current"
 echo "010,020,030,040..."
+echo
 
-read -p Selection: value
+read -n 2 -p "Selection:" value
 
 function command () {
     mpp-solar -p /dev/hidraw0 -P PI41 -c MUCHGC$value;

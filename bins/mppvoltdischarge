@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "PBDV<nn.n>: Set battery re-discharge voltage"
 echo "nn.n: 44V/45V/46V/47V/48V/49V/50V/51V"
+echo
 
-read -p Selection: value
+read -n 2 -p "Selection:" value
 
 function command () {
     mpp-solar -p /dev/hidraw0 -P PI41 -c PBDV$value;
