@@ -6,6 +6,7 @@
  
  ## To do:
 - ~~fix the setup script to just add the bins directory to the user's PATH~~
+  - done but may be only compatible with BASH? (have not tried with another shells yet)
 
 - make command available to another inverters compatible with jblance/mpp-solar
   - make it easy to be ported to someone's inverter setup
