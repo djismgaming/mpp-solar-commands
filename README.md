@@ -8,6 +8,8 @@
 - ~~fix the setup script to just add the bins directory to the user's PATH~~
   - done but may be only compatible with BASH? (have not tried with another shells yet)
 
+- consolidate all functions under a single library so we can call it easier instead of single "commands" by themselves
+
 - make command available to another inverters compatible with jblance/mpp-solar
   - make it easy to be ported to someone's inverter setup
     - maybe making the connection parameters of command be in another file on execution?
