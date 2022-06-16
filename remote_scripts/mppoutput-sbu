@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Changing output to Solar Backup Utility"
+echo "mpp-solar -p /dev/hidraw0 -P PI41 -c POP02"
+echo "Process done"
