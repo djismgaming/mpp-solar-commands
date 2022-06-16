@@ -1,14 +1,15 @@
 #!/bin/bash
-echo "PCP<NN>: Setting Inverter charger priority"
-echo "00 - utility first"
-echo "01 - solar first"
-echo "02 - solar and utility"
-echo "03 - only solar"
-echo
+echo "Show inverter data - PLEASE SELECT"
+echo "QPIRI - Current Settings inquiry for LV5048"
+echo "QFLAG - Flag Status inquiry"
+echo "QPIGS - General Status Parameters inquiry LV5048"
+echo "QMOD - Inverter Mode inquiry"
+echo "QPIWS - Warning status inquiry"
+echo 
 
 read -n 2 -p "Selection:" value
 
 function command () {
-    mpp-solar -p /dev/hidraw0 -P PI41 -c PCP$value;
+    mpp-solar -p /dev/hidraw0 -P PI41 -c $value;
     }
 command $value
