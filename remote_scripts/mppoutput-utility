@@ -1,13 +1,6 @@
 #!/bin/bash
-echo "POP<NN>: Setting Inverter output source priority"
-echo "00 - utility first"
-echo "01 - solar first"
-echo "02 - SBU priority"
-echo
-
-read -n 2 -p "Selection:" value
-
-function command () {
-    mpp-solar -p /dev/hidraw0 -P PI41 -c POP$value;
-    }
-command $value
+echo "-----"
+date
+echo "Changing output to Utility First"
+mpp-solar -p /dev/hidraw0 -P PI41 -c POP00
+echo "Process done"
