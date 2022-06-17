@@ -1,5 +1,5 @@
 #!/bin/bash
-# echo "Changing output to Solar Backup Utility"
-date >> ~/ha_command_log.txt
-mpp-solar -p /dev/hidraw0 -P PI41 -c POP02 >> ~/ha_command_log.txt
-# echo "Process done"
+echo "Changing output to Solar Backup Utility"
+date
+mpp-solar -p /dev/hidraw0 -P PI41 -c POP02
+echo "Process done"
