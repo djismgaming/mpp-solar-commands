@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM alpine
 
 RUN echo "**** install packages ****"
 RUN apt-get update && \
