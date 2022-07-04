@@ -92,4 +92,4 @@ sudo loginctl enable-linger $USER
 sleep 3
 systemctl --user list-unit-files | grep mpp-solar
 
-
+echo "Finished"
