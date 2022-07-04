@@ -8,10 +8,8 @@ EOF'
 
 echo "Installing mppsolar package with pip..."
 sudo apt update
-sudo apt install python3-pip python3-dev
+sudo apt install python3-pip python3-dev libpq-dev python3-systemd libglib2.0-dev
 sudo pip install mppsolar
-sudo apt install libglib2.0-dev
-sudo apt install python3-systemd
 
 sleep 3
 echo "Creating /etc/mpp-solar/mpp-solar.conf"
@@ -30,6 +28,7 @@ mqtt_broker=192.168.0.100
 mqtt_user=user
 mqtt_pass=pass
 
+
 # This example would work on a single LV5048
 [Inverter1_LV5048]
 protocol=PI41
@@ -38,6 +37,7 @@ baud=2400
 command=QPGS0,QP2GS0
 tag=LV5048
 outputs=hass_mqtt
+
 EOF'
 
 sleep 3
