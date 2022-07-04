@@ -45,7 +45,7 @@ echo "Creating /etc/systemd/user/mpp-solar.service"
 echo "Please modify /etc/systemd/user/mpp-solar.service"
 sleep 3
 
-sudo cat <<\EOF >/etc/systemd/user/mpp-solar.service
+sudo sh -c 'cat <<\EOF >/etc/systemd/user/mpp-solar.service
 
 # systemd unit file for the MPP-Solar Service
 #
@@ -60,8 +60,8 @@ Description=MPP Solar Service
 # Command to execute when the service is started
 ExecStart=/usr/bin/python3 /usr/local/bin/mpp-solar -C /etc/mpp-solar/mpp-solar.conf --daemon
 
-# Disable Python's buffering of STDOUT and STDERR, so that output from the
-# service shows up immediately in systemd's logs
+# Disable Python buffering of STDOUT and STDERR, so that output from the
+# service shows up immediately in systemd logs
 Environment=PYTHONUNBUFFERED=1
 
 # Automatically restart the service if it crashes
@@ -79,7 +79,7 @@ Type=notify
 # Tell systemd to automatically start this service when the system boots
 # (assuming the service is enabled)
 WantedBy=default.target
-EOF
+EOF'
 
 sleep 3
 systemctl --user list-unit-files|grep mpp-solar
