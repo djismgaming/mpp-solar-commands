@@ -2,9 +2,9 @@
 
 sudo usermod -a -G plugdev $USER
 
-sudo cat <<\EOF >/etc/udev/rules.d/99-hidraw.rules
+sudo sh -c 'cat <<\EOF >/etc/udev/rules.d/99-hidraw.rules
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev"
-EOF
+EOF'
 
 echo "Installing mppsolar package with pip..."
 sudo apt update
@@ -19,9 +19,9 @@ echo "Please modify /etc/mpp-solar/mpp-solar.conf"
 sleep 3
 
 sudo mkdir -p /etc/mpp-solar
-sudo chmod 777 /etc/mpp-solar
 
-sudo cat <<\EOF >/etc/mpp-solar/mpp-solar.conf
+
+sudo sh -c 'cat <<\EOF >/etc/mpp-solar/mpp-solar.conf
 [SETUP]
 # Number of seconds to pause between command execution loop
 # 0 is no pause, greater than 60 will cause service restarts
@@ -38,7 +38,7 @@ baud=2400
 command=QPGS0,QP2GS0
 tag=LV5048
 outputs=hass_mqtt
-EOF
+EOF'
 
 sleep 3
 echo "Creating /etc/systemd/user/mpp-solar.service"
