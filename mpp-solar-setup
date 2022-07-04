@@ -11,7 +11,7 @@ sudo apt update
 sudo apt install python3-pip python3-dev
 sudo pip install mppsolar
 sudo apt install libglib2.0-dev
-sudo pip install systemd-python
+sudo apt install python3-systemd
 
 sleep 3
 echo "Creating /etc/mpp-solar/mpp-solar.conf"
