@@ -7,5 +7,29 @@ sudo pip install mppsolar
 sudo apt install libglib2.0-dev
 sudo pip install systemd-python
 
-echo "Please copy ./etc/mpp-solar/mpp-solar.conf"
-echo "to /etc/mpp-solar/mpp-solar.conf"
+sleep 3
+echo "Creating /etc/mpp-solar/mpp-solar.conf"
+echo "Please modify /etc/mpp-solar/mpp-solar.conf"
+sleep 3
+
+sudo mkdir -p /etc/mpp-solar
+sudo chmod 777 /etc/mpp-solar
+
+sudo cat <<\EOF >/etc/mpp-solar/mpp-solar.conf
+[SETUP]
+# Number of seconds to pause between command execution loop
+# 0 is no pause, greater than 60 will cause service restarts
+pause=5
+mqtt_broker=192.168.0.100
+mqtt_user=user
+mqtt_pass=pass
+
+# This example would work on a single LV5048
+[Inverter1_LV5048]
+protocol=PI41
+port=/dev/hidraw0
+baud=2400
+command=QPGS0,QP2GS0
+tag=LV5048
+outputs=hass_mqtt
+EOF
