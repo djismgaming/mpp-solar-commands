@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sudo usermod -a -G plugdev $USER
+
+sudo cat <<\EOF >/etc/udev/rules.d/99-hidraw.rules
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev"
+EOF
+
 echo "Installing mppsolar package with pip..."
 sudo apt update
 sudo apt install python3-pip python3-dev
