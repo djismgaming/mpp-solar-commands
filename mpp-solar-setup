@@ -5,6 +5,7 @@ sudo apt update
 sudo apt install python3-pip python3-dev
 sudo pip install mppsolar
 sudo apt install libglib2.0-dev
+sudo pip install systemd-python
 
 echo "Please copy ./etc/mpp-solar/mpp-solar.conf"
 echo "to /etc/mpp-solar/mpp-solar.conf"
