@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "-----"
+date
+echo "Changing output to Utility First"
+mpp-solar -p /dev/hidraw1 -P PI41 -c POP00
+echo "Process done"
