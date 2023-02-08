@@ -2,5 +2,5 @@
 echo "-----"
 date
 echo "Changing input to Solar Only"
-mpp-solar -p /dev/hidraw0 -P PI41 -c PCP03
+mpp-solar -p /dev/hidraw1 -P PI41 -c PCP03
 echo "Process done"
