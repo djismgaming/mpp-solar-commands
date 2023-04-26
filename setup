@@ -5,7 +5,10 @@ echo "export PATH="\$HOME/mpp-solar-commands/bins:\$PATH"" >> ~/.bashrc
 echo "..."
 sleep 1
 echo "IMPORTANT STEPS:"
-echo "Copy files inside etc directory to the /etc directory in the host"
+echo "Copying files inside etc directory to the /etc directory in the host"
+sudo cp -r etc/* /etc/
+# reloading systemd daemon to get our service file
+sudo systemctl daemon-reload
 echo "Please use command source ~/.bashrc to apply PATH changes immediately"
 echo "Below for copy > paste"
 echo "source ~/.bashrc"
