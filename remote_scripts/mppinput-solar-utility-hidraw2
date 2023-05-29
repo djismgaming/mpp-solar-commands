@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "-----"
 date
-echo "Changing input to Solar + Utility"
+echo "Changing input to Solar + Utility 2"
 mpp-solar -p /dev/hidraw2 -P PI41 -c PCP02
 echo "Process done"

@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "-----"
 date
-echo "Changing output to Utility First"
+echo "Changing output to Utility First 0"
 mpp-solar -p /dev/hidraw0 -P PI41 -c PCP00
 echo "Process done"

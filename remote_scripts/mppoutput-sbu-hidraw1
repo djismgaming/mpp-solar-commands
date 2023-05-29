@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "-----"
 date
-echo "Changing output to Solar Backup Utility"
+echo "Changing output to Solar Backup Utility 1"
 mpp-solar -p /dev/hidraw1 -P PI41 -c POP02
 echo "Process done"

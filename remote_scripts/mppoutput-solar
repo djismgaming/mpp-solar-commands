@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "-----"
 date
-echo "Changing output to Solar First"
+echo "Changing output to Solar First 0"
 mpp-solar -p /dev/hidraw0 -P PI41 -c POP01
 echo "Process done"
