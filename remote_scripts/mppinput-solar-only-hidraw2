@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "-----"
+date
+echo "Changing input to Solar Only"
+mpp-solar -p /dev/hidraw2 -P PI41 -c PCP03
+echo "Process done"
