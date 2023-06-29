@@ -6,10 +6,9 @@ echo "02 - solar and utility"
 echo "03 - only solar"
 echo
 
-read -n 1 -p "Inverter selection:" inverter
 read -n 2 -p "Selection:" value
 
 function command () {
-    mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP$value;
+    mpp-solar -p /dev/hidraw0 -P PI41 -c PCP$value;
     }
 command $value
