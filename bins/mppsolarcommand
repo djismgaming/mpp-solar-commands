@@ -5,7 +5,7 @@ echo "1. Inverter input change"
 echo "2. Option 2"
 echo "3. Option 3"
 
-read choice
+read -n 1 choice
 
 case $choice in
     1)
