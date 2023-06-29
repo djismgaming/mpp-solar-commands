@@ -1,5 +1,7 @@
 #!/bin/bash
 echo
+echo "MPP Solar Command"
+echo
 echo "Select an option:"
 echo "1. Inverter input change"
 echo "2. Option 2"
