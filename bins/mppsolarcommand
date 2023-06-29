@@ -13,7 +13,7 @@ case $choice in
 
         echo
         read -n 1 -p "Inverter number:" inverter
-
+        echo
         echo "PCP<NN>: Setting Inverter charger priority"
         echo "00 - utility first"
         echo "01 - solar first"
