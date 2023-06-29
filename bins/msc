@@ -8,7 +8,7 @@ echo
 echo
 echo "Select an option:"
 echo "1. Inverter input change"
-echo "2. Option 2"
+echo "2. Inverter output change"
 echo "3. Option 3"
 echo
 read -n 1 choice
@@ -34,7 +34,19 @@ case $choice in
         echo
         ;;
     2)
-        echo "You selected option 2."
+        echo
+        echo "POP<NN>: Setting Inverter output source priority"
+        echo "00 - utility first"
+        echo "01 - solar first"
+        echo "02 - SBU priority"
+        echo
+
+        read -n 2 -p "Selection:" value
+
+        function command () {
+            mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP$value;
+            }
+        command $inverter $value
         ;;
     3)
         echo "You selected option 3."
