@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "PCP<NN>: Setting Inverter charger priority"
 echo "00 - utility first"
 echo "01 - solar first"
