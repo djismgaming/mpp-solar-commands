@@ -7,6 +7,7 @@ echo "3. Option 3"
 echo
 read -n 1 choice
 echo
+echo
 
 case $choice in
     1)
