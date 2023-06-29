@@ -1,16 +1,15 @@
 #!/bin/bash
-
+echo
 echo "Select an option:"
 echo "1. Inverter input change"
 echo "2. Option 2"
 echo "3. Option 3"
-
+echo
 read -n 1 choice
 
 case $choice in
     1)
         echo "Inverter input"
-
         echo
         read -n 1 -p "Inverter number:" inverter
         echo
@@ -19,9 +18,9 @@ case $choice in
         echo "01 - solar first"
         echo "02 - solar and utility"
         echo "03 - only solar"
-
+        echo
         read -n 2 -p "Selection:" value
-
+        echo
         function command () {
             mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP$value;
             }
