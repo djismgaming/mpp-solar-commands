@@ -27,6 +27,7 @@ case $choice in
             mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP$value;
             }
         command $inverter $value
+        echo
         ;;
     2)
         echo "You selected option 2."
