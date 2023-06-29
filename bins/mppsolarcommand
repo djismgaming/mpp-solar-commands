@@ -10,8 +10,6 @@ echo
 
 case $choice in
     1)
-        echo "Inverter input"
-        echo
         read -n 1 -p "Inverter number:" inverter
         echo
         echo "PCP<NN>: Setting Inverter charger priority"
