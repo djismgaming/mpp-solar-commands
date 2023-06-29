@@ -15,7 +15,6 @@ read -n 1 choice
 echo
 echo
 
-
 case $choice in
     1)
         
