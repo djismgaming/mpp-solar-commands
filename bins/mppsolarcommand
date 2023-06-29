@@ -22,6 +22,7 @@ case $choice in
         echo
         read -n 2 -p "Selection:" value
         echo
+        echo
         function command () {
             mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP$value;
             }
