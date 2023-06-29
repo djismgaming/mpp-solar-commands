@@ -1,6 +1,10 @@
 #!/bin/bash
 echo
 echo "MPP Solar Command"
+echo "Select inverter to manage"
+echo 
+echo
+read -n 1 -p "Inverter number:" inverter
 echo
 echo "Select an option:"
 echo "1. Inverter input change"
@@ -11,9 +15,10 @@ read -n 1 choice
 echo
 echo
 
+
 case $choice in
     1)
-        read -n 1 -p "Inverter number:" inverter
+        
         echo
         echo
         echo "PCP<NN>: Setting Inverter charger priority"
