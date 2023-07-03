@@ -62,6 +62,7 @@ case $change in
                     mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP03;
                     }
                 command $inverter
+                echo
                 echo "Inverter changing to Only Solar charge"
                 echo
               ;;
@@ -70,6 +71,7 @@ case $change in
                     mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP02;
                     }
                 command $inverter
+                echo
                 echo "Inverter changing to Solar and Utility charge"
                 echo
               ;;
