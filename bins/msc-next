@@ -24,7 +24,7 @@ while getopts ":i:in:o:h" opt; do
         i)
             inverter=$OPTARG
             ;;
-        in)
+        c)
             change=$OPTARG
             ;;
         o)
@@ -50,8 +50,69 @@ if [ -z "$inverter" ] || [ -z "$change" ] || [ -z "$option" ]; then
     usage
 fi
 
-echo "Inverter: $inverter"
-echo "change: $change"
-echo "Option: $option"
+# echo "Inverter: $inverter"
+# echo "change: $change"
+# echo "Option: $option"
 
-# Rest of your script...
+case $change in
+    i)
+        case $option in
+            s)
+                function command () {
+                    mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP03;
+                    }
+                command $inverter
+                echo
+                esac
+              ;;
+            u)
+                function command () {
+                    mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP02;
+                    }
+                command $inverter
+                echo
+                esac
+              ;;
+        
+        ;;
+    o)
+        echo
+        echo "POP<NN>: Setting Inverter output source priority"
+        echo "00 - utility first"
+        echo "01 - solar first"
+        echo "02 - SBU priority"
+        echo
+
+        read -n 2 -p "Selection:" value
+
+        function command () {
+            mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP$value;
+            }
+        command $inverter $value
+        ;;
+    3)
+        echo
+        echo "Show inverter data - PLEASE SELECT"
+        echo "QPIRI - Current Settings inquiry for LV5048"
+        echo "QFLAG - Flag Status inquiry"
+        echo "QPIGS - General Status Parameters inquiry LV5048"
+        echo "QMOD - Inverter Mode inquiry"
+        echo "QPIWS - Warning status inquiry"
+        echo 
+
+        read -n 2 -p "Selection:" value
+
+        
+
+        function command () {
+            mpp-solar -p /dev/hidraw$inverter -P PI41 -c $value;
+            }
+        command $inverter $value
+        ;;
+    h)
+        usage
+        ;;
+    *)
+        echo "Invalid choice."
+        ;;
+esac
