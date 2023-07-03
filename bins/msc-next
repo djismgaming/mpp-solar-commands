@@ -78,19 +78,26 @@ case $change in
         esac
         ;;
     o)
-        echo
-        echo "POP<NN>: Setting Inverter output source priority"
-        echo "00 - utility first"
-        echo "01 - solar first"
-        echo "02 - SBU priority"
-        echo
-
-        read -n 2 -p "Selection:" value
-
-        function command () {
-            mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP$value;
-            }
-        command $inverter $value
+        case $option in
+            s)
+                function command () {
+                    mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP02;
+                    }
+                command $inverter
+                echo
+                echo "Inverter changing to Solar output"
+                echo
+              ;;
+            u)
+                function command () {
+                    mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP00;
+                    }
+                command $inverter
+                echo
+                echo "Inverter changing to Utility output"
+                echo
+              ;;
+        esac
         ;;
     3)
         echo
