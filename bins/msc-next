@@ -71,8 +71,9 @@ case $change in
                     }
                 command $inverter
                 echo
-                esac
+                
               ;;
+        esac
         ;;
     o)
         echo
