@@ -1,28 +1,32 @@
 #!/bin/bash
 
 # Default values
-file=""
-flag=false
-count=0
+inverter=""
+input=""
+option=""
 
 # Function to display usage
 function usage {
-    echo "Usage: script.sh [-f <file>] [-c <count>] [-h]"
+    echo "Usage: msc-next [-i <inverter>] [-in <input>] [-o <option>] [-h]"
     echo "Options:"
-    echo "  -f <file>   Specify a file"
-    echo "  -c <count>  Specify a count"
-    echo "  -h          Display this help message"
+    echo "  -i <inverter>  Specify the inverter"
+    echo "  -in <input>    Specify the input"
+    echo "  -o <option>    Specify the option"
+    echo "  -h             Display this help message"
     exit 1
 }
 
 # Parse command line options
-while getopts ":f:c:h" opt; do
+while getopts ":i:in:o:h" opt; do
     case ${opt} in
-        f)
-            file=$OPTARG
+        i)
+            inverter=$OPTARG
             ;;
-        c)
-            count=$OPTARG
+        in)
+            input=$OPTARG
+            ;;
+        o)
+            option=$OPTARG
             ;;
         h)
             usage
@@ -39,12 +43,16 @@ while getopts ":f:c:h" opt; do
 done
 
 # Perform actions based on options
-if [ ! -z "$file" ]; then
-    echo "File: $file"
+if [ ! -z "$inverter" ]; then
+    echo "Inverter: $inverter"
 fi
 
-if [ "$count" -gt 0 ]; then
-    echo "Count: $count"
+if [ ! -z "$input" ]; then
+    echo "Input: $input"
+fi
+
+if [ ! -z "$option" ]; then
+    echo "Option: $option"
 fi
 
 # Rest of your script...
