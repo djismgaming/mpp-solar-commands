@@ -106,3 +106,4 @@ case $change in
         echo "Invalid choice."
         ;;
 esac
+clear
