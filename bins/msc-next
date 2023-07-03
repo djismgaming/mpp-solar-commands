@@ -13,6 +13,7 @@ function usage {
     echo "  -c <change>    Specify the change: i=input|o=output"
     echo "  -o <option>    Specify the option: s=solar|u=utility"
     echo "  -h             Display this help message"
+    echo
     exit 1
 }
 
