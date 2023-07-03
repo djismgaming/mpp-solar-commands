@@ -9,9 +9,9 @@ option=""
 function usage {
     echo "Usage: msc-next [-i <inverter>] [-c <change>] [-o <option>] [-h]"
     echo "Options:"
-    echo "  -i <inverter>  Specify the inverter: 0=casa / 2=aires "
-    echo "  -c <change>    Specify the change: i=input / o=output"
-    echo "  -o <option>    Specify the option"
+    echo "  -i <inverter>  Specify the inverter: 0=casa|2=aires "
+    echo "  -c <change>    Specify the change: i=input|o=output"
+    echo "  -o <option>    Specify the option: s=solar|"
     echo "  -h             Display this help message"
     exit 1
 }
