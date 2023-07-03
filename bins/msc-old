@@ -1,0 +1,77 @@
+#!/bin/bash
+echo
+echo "MPP Solar Command"
+echo "Select inverter to manage"
+echo 
+read -n 1 -p "Inverter number:" inverter
+echo
+echo
+echo "Select an option:"
+echo "1 - Inverter input change"
+echo "2 - Inverter output change"
+echo "3 - Option 3"
+echo "h - help"
+echo
+read -n 1 choice
+echo
+echo
+
+case $choice in
+    1)
+        echo
+        echo "PCP<NN>: Setting Inverter charger priority"
+        echo "00 - utility first"
+        echo "01 - solar first"
+        echo "02 - solar and utility"
+        echo "03 - only solar"
+        echo
+        read -n 2 -p "Selection:" value
+        echo
+        echo
+        function command () {
+            mpp-solar -p /dev/hidraw$inverter -P PI41 -c PCP$value;
+            }
+        command $inverter $value
+        echo
+        ;;
+    2)
+        echo
+        echo "POP<NN>: Setting Inverter output source priority"
+        echo "00 - utility first"
+        echo "01 - solar first"
+        echo "02 - SBU priority"
+        echo
+
+        read -n 2 -p "Selection:" value
+
+        function command () {
+            mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP$value;
+            }
+        command $inverter $value
+        ;;
+    3)
+        echo
+        echo "Show inverter data - PLEASE SELECT"
+        echo "QPIRI - Current Settings inquiry for LV5048"
+        echo "QFLAG - Flag Status inquiry"
+        echo "QPIGS - General Status Parameters inquiry LV5048"
+        echo "QMOD - Inverter Mode inquiry"
+        echo "QPIWS - Warning status inquiry"
+        echo 
+
+        read -n 2 -p "Selection:" value
+
+        
+
+        function command () {
+            mpp-solar -p /dev/hidraw$inverter -P PI41 -c $value;
+            }
+        command $inverter $value
+        ;;
+    h)
+        usage
+        ;;
+    *)
+        echo "Invalid choice."
+        ;;
+esac
