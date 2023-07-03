@@ -73,7 +73,6 @@ case $change in
                 echo
                 esac
               ;;
-        
         ;;
     o)
         echo
