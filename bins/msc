@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 # Default values
 inverter=""
 change=""
@@ -106,4 +108,3 @@ case $change in
         echo "Invalid choice."
         ;;
 esac
-clear
