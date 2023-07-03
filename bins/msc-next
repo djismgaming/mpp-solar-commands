@@ -42,17 +42,14 @@ while getopts ":i:in:o:h" opt; do
     esac
 done
 
-# Perform actions based on options
-if [ ! -z "$inverter" ]; then
-    echo "Inverter: $inverter"
+# Check if all three options were provided
+if [ -z "$inverter" ] || [ -z "$input" ] || [ -z "$option" ]; then
+    echo "Error: All options (-i, -in, -o) must be provided."
+    usage
 fi
 
-if [ ! -z "$input" ]; then
-    echo "Input: $input"
-fi
-
-if [ ! -z "$option" ]; then
-    echo "Option: $option"
-fi
+echo "Inverter: $inverter"
+echo "Input: $input"
+echo "Option: $option"
 
 # Rest of your script...
