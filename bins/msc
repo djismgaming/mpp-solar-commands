@@ -16,16 +16,6 @@ read -n 1 choice
 echo
 echo
 
-# Function to display usage
-function usage {
-    echo "Usage: script.sh [-f <file>] [-c <count>] [-h]"
-    echo "Options:"
-    echo "  -f <file>   Specify a file"
-    echo "  -c <count>  Specify a count"
-    echo "  -h          Display this help message"
-    exit 1
-}
-
 case $choice in
     1)
         echo
