@@ -99,25 +99,6 @@ case $change in
               ;;
         esac
         ;;
-    3)
-        echo
-        echo "Show inverter data - PLEASE SELECT"
-        echo "QPIRI - Current Settings inquiry for LV5048"
-        echo "QFLAG - Flag Status inquiry"
-        echo "QPIGS - General Status Parameters inquiry LV5048"
-        echo "QMOD - Inverter Mode inquiry"
-        echo "QPIWS - Warning status inquiry"
-        echo 
-
-        read -n 2 -p "Selection:" value
-
-        
-
-        function command () {
-            mpp-solar -p /dev/hidraw$inverter -P PI41 -c $value;
-            }
-        command $inverter $value
-        ;;
     h)
         usage
         ;;
