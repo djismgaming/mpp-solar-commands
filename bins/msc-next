@@ -11,7 +11,7 @@ function usage {
     echo "Options:"
     echo "  -i <inverter>  Specify the inverter: 0=casa|2=aires "
     echo "  -c <change>    Specify the change: i=input|o=output"
-    echo "  -o <option>    Specify the option: s=solar|"
+    echo "  -o <option>    Specify the option: s=solar|u=utility"
     echo "  -h             Display this help message"
     exit 1
 }
