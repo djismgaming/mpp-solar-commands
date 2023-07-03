@@ -19,7 +19,7 @@ function usage {
 }
 
 # Parse command line options
-while getopts ":i:in:o:h" opt; do
+while getopts ":i:c:o:h" opt; do
     case ${opt} in
         i)
             inverter=$OPTARG
