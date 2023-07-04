@@ -64,9 +64,9 @@ case $choice in
         
 
         function command () {
-            mpp-solar -p /dev/hidraw$inverter -P PI41 -c $value;
+            mpp-solar -p /dev/hidraw0 -P PI41 -c MUCHGC$value;
             }
-        command $inverter $value
+        command $value
         ;;
     h)
         usage

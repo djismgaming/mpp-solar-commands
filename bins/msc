@@ -101,6 +101,58 @@ case $change in
               ;;
         esac
         ;;
+    a)
+        case $option in
+            10)
+                # echo "MUCHGC<nnn>: Setting utility max charging current"
+                # echo "nnn is max charging current"
+                # echo "010,020,030,040..."
+                # echo
+
+                # read -n 2 -p "Selection:" value
+
+                function command () {
+                    mpp-solar -p /dev/hidraw0 -P PI41 -c MUCHGC010;
+                    }
+                command $value
+                echo
+                echo "Utility charging 10A"
+                echo
+              ;;
+            20)
+                # echo "MUCHGC<nnn>: Setting utility max charging current"
+                # echo "nnn is max charging current"
+                # echo "010,020,030,040..."
+                # echo
+
+                # read -n 2 -p "Selection:" value
+
+                function command () {
+                    mpp-solar -p /dev/hidraw0 -P PI41 -c MUCHGC020;
+                    }
+                command $value
+                echo
+                echo "Utility charging 20A"
+                echo
+              ;;
+            30)
+                # echo "MUCHGC<nnn>: Setting utility max charging current"
+                # echo "nnn is max charging current"
+                # echo "010,020,030,040..."
+                # echo
+
+                # read -n 2 -p "Selection:" value
+
+                function command () {
+                    mpp-solar -p /dev/hidraw0 -P PI41 -c MUCHGC030;
+                    }
+                command $value
+                echo
+                echo "Utility charging 30A"
+                echo
+              ;;
+        esac
+        ;;
     h)
         usage
         ;;
