@@ -1,8 +1,12 @@
 #!/bin/bash
-echo "Adding /bins to PATH"
-sleep 1
-echo "export PATH="\$HOME/mpp-solar-commands/bins:\$PATH"" >> ~/.bashrc
-echo "..."
+# echo "Adding /bins to PATH"
+# sleep 1
+# echo "export PATH="\$HOME/mpp-solar-commands/bins:\$PATH"" >> ~/.bashrc
+# echo "..."
+echo "Starting mpp-solar-commands setup...
+echo "Copying /bins to ~/.local/bin
+mkdir ~/.local/bin/
+cp -r ./bins/* ~/.local/bin/
 sleep 1
 echo "IMPORTANT STEPS:"
 echo "Copying files inside etc directory to the /etc directory in the host"
