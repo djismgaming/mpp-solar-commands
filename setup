@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Adding /bin to PATH"
 # sleep 1
-echo "export PATH="\$HOME/mpp-solar-commands/bin:\$PATH"" >> ~/.bashrc
+echo "export PATH="\$HOME/.local/bin:\$PATH"" >> ~/.bashrc
 echo "..."
 echo "Starting mpp-solar-commands setup...
 echo "Copying /bin to ~/.local/bin
