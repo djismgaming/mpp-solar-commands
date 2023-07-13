@@ -7,6 +7,7 @@ echo "Starting mpp-solar-commands setup...
 echo "Copying /bin to ~/.local/bin
 mkdir ~/.local/bin/
 cp -r bin/* ~/.local/bin/
+chmod +x ~/.local/bin/*
 sleep 1
 echo "IMPORTANT STEPS:"
 echo "Copying files inside etc directory to the /etc directory in the host"
