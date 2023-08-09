@@ -14,7 +14,7 @@ function usage {
     echo "Options:"
     echo "  -i <inverter>  Specify the inverter: 0=casa|2=aires "
     echo "  -c <change>    Specify the change: i=input|o=output|a=charging amps"
-    echo "  -o <option>    Specify the option: s=solar|u=utility|10/20/30=charging amps"
+    echo "  -o <option>    Specify the option: s=solar|u=utility|l=solar first|10/20/30=charging amps"
     echo "  -h             Display this help message"
     echo
     exit 1
@@ -97,6 +97,15 @@ case $change in
                 command $inverter
                 echo
                 echo "Inverter changing to Utility output"
+                echo
+              ;;
+            l)
+                function command () {
+                    mpp-solar -p /dev/hidraw$inverter -P PI41 -c POP01;
+                    }
+                command $inverter
+                echo
+                echo "Inverter changing to Solar first output"
                 echo
               ;;
         esac
