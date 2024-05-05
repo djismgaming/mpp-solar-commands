@@ -12,14 +12,6 @@ else
   exit 1
 fi
 
-# MODIFY THESE LINES
-mqttBroker=192.168.0.100
-mqttUser=user
-mqttPass=pass
-inverter1Port=/dev/hidraw1
-inverter2port=/dev/hidraw2
-# DO NOT MODIFY BELOW THIS LINE
-
 
 sudo usermod -a -G plugdev $USER
 
@@ -45,15 +37,15 @@ sudo sh -c 'cat <<\EOF >/etc/mpp-solar/mpp-solar.conf
 # Number of seconds to pause between command execution loop
 # 0 is no pause, greater than 60 will cause service restarts
 pause=5
-mqtt_broker=${mqttBroker}
-mqtt_user=${mqttUser}
-mqtt_pass=${mqttPass}
+mqtt_broker=192.168.0.2
+mqtt_user=user
+mqtt_pass=pass
 
 
 # This example would work on a single LV5048
 [Inverter1_LV5048]
 protocol=PI41
-port=${inverter1Port}
+port=/dev/hidraw1
 baud=2400
 command=QPGS0
 tag=LV5048
@@ -61,7 +53,7 @@ outputs=hass_mqtt
 
 [Inverter2_LV5048]
 protocol=PI41
-port=${inverter1Port}
+port=/dev/hidraw1
 baud=2400
 command=QP2GS0
 tag=LV5048
@@ -69,7 +61,7 @@ outputs=hass_mqtt
 
 [Inverter3_LV6048]
 protocol=PI41
-port=${inverter2port}
+port=/dev/hidraw2
 baud=2400
 command=QPGS0
 tag=LV6048
@@ -78,7 +70,7 @@ outputs=hass_mqtt
 
 [Inverter4_LV6048]
 protocol=PI41
-port=${inverter2port}
+port=/dev/hidraw2
 baud=2400
 command=QP2GS0
 tag=LV6048
