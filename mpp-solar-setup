@@ -32,7 +32,7 @@ mqtt_pass=pass
 # This example would work on a single LV5048
 [Inverter1_LV5048]
 protocol=PI41
-port=/dev/hidraw0
+port=/dev/hidraw1
 baud=2400
 command=QPGS0
 tag=LV5048
@@ -40,10 +40,27 @@ outputs=hass_mqtt
 
 [Inverter2_LV5048]
 protocol=PI41
-port=/dev/hidraw0
+port=/dev/hidraw1
 baud=2400
 command=QP2GS0
 tag=LV5048
+outputs=hass_mqtt
+
+[Inverter3_LV6048]
+protocol=PI41
+port=/dev/hidraw2
+baud=2400
+command=QPGS0
+tag=LV6048
+outputs=hass_mqtt
+
+
+[Inverter4_LV6048]
+protocol=PI41
+port=/dev/hidraw2
+baud=2400
+command=QP2GS0
+tag=LV6048
 outputs=hass_mqtt
 
 EOF'
